@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='status',
-            field=models.BooleanField(default=2),
+            field=models.BooleanField(),
             preserve_default=False,
         ),
     ]
