@@ -100,8 +100,10 @@
         <div class="single-post row">
           <div class="col-lg-3 col-md-3 meta-details">
             <ul class="tags">
-             {{post.category.all|join:", "}}
-              
+            
+              {% for cat in post.category.all %}
+                {{ cat.name }} {% if not forloop.last %},{% endif %}
+              {% endfor %}
             
             </ul>
             <div class="user-details row">
@@ -109,7 +111,7 @@
                 <a href="#">{{post.author.get_full_name}}</a> <span class="lnr lnr-user"></span>
               </p>
               <p class="date col-lg-12 col-md-12 col-6">
-                <a href="#">{{post.published_date}}7</a>
+                <a href="#">{{post.published_date|date:"d/M/Y"}}</a>
                 <span class="lnr lnr-calendar-full"></span>
               </p>
               <p class="view col-lg-12 col-md-12 col-6">
@@ -132,8 +134,8 @@
               ><h3>{{post.title}}</h3></a
             >
             <p class="excert">
-             {{post.content}}
-             {{post.image}}
+             {{post.content|truncatechars:10}}
+            
             </p>
             <a href="#" class="primary-btn">View More</a>
           </div>
