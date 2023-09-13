@@ -263,7 +263,8 @@
       </div>
       <div class="col-lg-4 sidebar-widgets">
         <div class="widget-wrap">
-          <div class="single-sidebar-widget search-widget">
+          {% comment %} {% include 'blog/blog-search.html' %} {% endcomment %}
+          {% comment %} <div class="single-sidebar-widget search-widget">
             <form class="search-form" action="#">
               <input
                 placeholder="Search Posts"
@@ -274,9 +275,13 @@
               />
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-          </div>
+          </div> {% endcomment %}
           {% include 'blog/blog-writer.html' %}
-          <div class="single-sidebar-widget popular-post-widget">
+
+          {% comment %} {% include 'blog/blog-tags.html' %} {% endcomment %}
+
+          {% latestposts %}
+          {% comment %} <div class="single-sidebar-widget popular-post-widget">
             <h4 class="popular-title">Popular Posts</h4>
             <div class="popular-post-list">
               <div class="single-post-list d-flex flex-row align-items-center">
@@ -318,9 +323,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
           {% include 'blog/blog-ads.html' %}
-          <div class="single-sidebar-widget post-category-widget">
+          {% comment %} <div class="single-sidebar-widget post-category-widget">
             <h4 class="category-title">Post Catgories</h4>
             <ul class="cat-list">
               <li>
@@ -411,7 +416,7 @@
               <li><a href="#">Lifestyle</a></li>
               <li><a href="#">Adventure</a></li>
             </ul>
-          </div>
+          </div> {% endcomment %}
         </div>
       </div>
     </div>
@@ -419,3 +424,4 @@
 </section>
 <!-- End post-content Area -->
 {%endblock%}
+
