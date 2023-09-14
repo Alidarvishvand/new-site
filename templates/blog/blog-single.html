@@ -263,7 +263,7 @@
       </div>
       <div class="col-lg-4 sidebar-widgets">
         <div class="widget-wrap">
-          {% comment %} {% include 'blog/blog-search.html' %} {% endcomment %}
+          {% include 'blog/blog-search.html' %}
           {% comment %} <div class="single-sidebar-widget search-widget">
             <form class="search-form" action="#">
               <input
@@ -275,10 +275,10 @@
               />
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-          </div> {% endcomment %}
+          </div>  {% endcomment %}
           {% include 'blog/blog-writer.html' %}
 
-          {% comment %} {% include 'blog/blog-tags.html' %} {% endcomment %}
+          {% include 'blog/blog-tags.html' %}
 
           {% latestposts %}
           {% comment %} <div class="single-sidebar-widget popular-post-widget">
