@@ -3,7 +3,9 @@ from blog.models import Post,Comment
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from blog.forms import CommentForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required
 def blog_view(request,cat_name=None,author_username=None):
   posts = Post.objects.filter(status=1)
   if cat_name: 

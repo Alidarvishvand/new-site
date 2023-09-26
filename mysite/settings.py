@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'website.apps.WebsiteConfig',
-    'blog'
+    'blog',
+    'accounts'
 ]
 ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
